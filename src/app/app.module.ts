@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Dialogs } from '@ionic-native/dialogs';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { SocialSharing } from '@ionic-native/social-sharing';
+// import { SocialSharing } from '@ionic-native/social-sharing';
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -139,7 +139,7 @@ import { GlobalServices } from '../providers/global-services';
     Dialogs,
     GlobalServices,
     InAppBrowser,
-    SocialSharing,
+    // SocialSharing,
     //BarcodeScanner,
     SignUpService,
     LangServices
