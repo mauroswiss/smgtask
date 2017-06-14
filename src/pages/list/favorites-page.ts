@@ -8,7 +8,7 @@ import { Events } from 'ionic-angular';
     <ion-list>
 
       <ion-item *ngFor="let contact of favorites; let i=index">
-        <div (click)="goTochat(contact.id,contact.img,contact.name)" class="itemCnt">
+        <div (click)="goTochat(contact.id,contact.img,contact.name,contact.text)" class="itemCnt">
           <ion-avatar item-left>
             <img src="{{contact.img}}">
           </ion-avatar>
@@ -62,8 +62,8 @@ export class FavoritesTab {
     }
   }
 
-  goTochat(id,img,name){
-    this.events.publish('itemCall:selected',id,img,name);
+  goTochat(id,img,name,text){
+    this.events.publish('itemCall:selected',id,img,name,text);
   }
 
   removeFav(index,obj){

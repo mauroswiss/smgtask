@@ -93,7 +93,7 @@ export class MyApp {
     });
 
     this.pages = [
-      { title:'', icon:'contact',component: ContactInfoPage },
+      // { title:'', icon:'contact',component: ContactInfoPage },
       // { title: '', icon: 'md-git-compare', component: SchedulePage },
       // { title: '', icon: 'people', component: ForumMembersPage },
       // { title: '', icon: 'megaphone', component: SponsorsPage },

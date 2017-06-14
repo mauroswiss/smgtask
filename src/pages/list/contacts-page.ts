@@ -7,7 +7,7 @@ import { Events } from 'ionic-angular';
       <ion-list>
 
           <ion-item *ngFor="let contact of contacts">
-            <div (click)="goTochat(1,contact.img,contact.name)" class="itemCnt">
+            <div (click)="goTochat(1,contact.img,contact.name,contact.text)" class="itemCnt">
               <ion-avatar item-left>
                 <img src="{{contact.img}}">
               </ion-avatar>
@@ -58,8 +58,8 @@ export class ContactsPage {
     ];
   }
 
-  goTochat(id,img,name){
-    this.events.publish('itemCall:selected',id,img,name);
+  goTochat(id,img,name,text){
+    this.events.publish('itemCall:selected',id,img,name,text);
   }
 
   favorite(id,status){

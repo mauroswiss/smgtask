@@ -44,11 +44,11 @@
     </div>
     <form class="conversation-compose">
       <div class="emoji">
-        <ion-icon name="md-image" class="emoti" (click)="callGallery()"></ion-icon>
+        <ion-icon name="checkmark-circle" class="emoti" (click)="approve()"></ion-icon>
       </div>
-      <input class="input-msg" name="input" placeholder="Escribir mensaje" [(ngModel)]="inputMessage"/>
+      <input class="input-msg" name="input" placeholder="Escribir comentarios" [(ngModel)]="inputMessage"/>
       <div class="photo">
-        <ion-icon md="md-camera" class="camera" (click)="callCamera()"></ion-icon>
+        <ion-icon name="close-circle" class="camera" (click)="reject()"></ion-icon>
       </div>
       <button class="send" (click)="sendNewMessage('text','')">
         <div class="circle">

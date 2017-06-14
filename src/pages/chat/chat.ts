@@ -1,11 +1,12 @@
 import { Component, ViewChild,ElementRef } from '@angular/core';
 import { NavController, NavParams, AlertController} from 'ionic-angular';
-import {ContactInfoPage} from '../contact-info/contact-info';
+import { ContactInfoPage} from '../contact-info/contact-info';
 import { Keyboard } from '@ionic-native/keyboard';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { FileOpener } from '@ionic-native/file-opener';
+import { Dialogs } from '@ionic-native/dialogs';
 
 /*
   Generated class for the Chat page.
@@ -24,20 +25,14 @@ export class ChatPage {
   @ViewChild('cnt') private myScrollContainer: ElementRef;
 
   private messages = [
-      {type:"sent", img:"", text:'Buenos dias como estás!.', time:"9:13 PM", check:"tick"},
-      {type:"received", img:"", text:'Hola, bien gracias..', time:"9:14 PM", check:""},
-      {type:"sent", img:"", text:'es sobre la consulta de ayer, quería saber si quedo claro.', time:"9:13 PM", check:"tick"},
-      {type:"received", img:"", text:'Si, todo perfecto, te estoy respondiendo mañana', time:"9:13 PM", check:""},
-      {type:"sent", img:"", text:'Ok, muy bien gracias', time:"9:13 PM", check:"tick"}
+      //{type:"received", img:"", text:'Buenos dias necesito un cambio de quipo celular!.', time:"9:13 PM", check:"tick"}
   ]
 
   private receivedMessages = [
-      {type:"received", img:"", text:'Lo podemos ver en algún momento del día, seguro!!', time:"9:13 PM", check:"tick"},
-      {type:"received", img:"", text:'Puedo darte un turno el martes que viene', time:"9:13 PM", check:"tick"},
-      {type:"received", img:"", text:'Si seguro , no hay problema', time:"9:13 PM", check:"tick"},
-      {type:"received", img:"", text:'Claro, hay que hacer el chequeo anual', time:"9:13 PM", check:"tick"},
-      {type:"received", img:"", text:'me parece bien', time:"9:13 PM", check:"tick"}
+    // {type:"recive", img:"", text:'Buenos dias necesito un cambio de quipo celular!.', time:"9:13 PM", check:"tick"}
   ]
+  
+   
 
   private date;
   private hours="";
@@ -52,7 +47,9 @@ export class ChatPage {
     'id':0,
     'img':"",
     'name':"",
-    'status':"-",
+    'status':"Solicitud creada hace 24hs",
+    'text':"",
+    'open':true
   }
   private showTimer=false;
   //private template='<ion-content><img src="assets/custom/profile.jpg"></ion-content>';
@@ -68,16 +65,18 @@ export class ChatPage {
     private imagePicker: ImagePicker,
     private nativeAudio: NativeAudio,
     public alertCtrl: AlertController,
+    private dialogs: Dialogs,
     private fileOpener: FileOpener
     ) {
       this.params = navParams.get("param");
       this.contact.id=this.params.id;
       this.contact.img=this.params.img;
       this.contact.name=this.params.name;
+      this.contact.text=this.params.text;
       this.bar_porcen_text=this.bar_porcen+"%";
-      //this.keyboard.close();
-      this.nativeAudio.preloadSimple('send', 'assets/custom/send.mp3').then(function(){console.log("OK loaded send")}, function(){console.log("ERROR loaded send")});
-      this.nativeAudio.preloadSimple('recive', 'assets/custom/recive.mp3').then(function(){console.log("OK loaded recive")}, function(){console.log("ERROR loaded recive")});
+     this.messages = [
+      {type:"received", img:"", text:this.contact.text, time:"9:13 PM", check:"tick"}
+  ]
   }
 
   ionViewDidLoad() {
@@ -103,13 +102,13 @@ export class ChatPage {
           this.messageChecked();
         }, 1000);
 
-        setTimeout(() => {
-          this.contact.status="escribiendo..";
-        }, 2000);
+        // setTimeout(() => {
+        //   this.contact.status="escribiendo..";
+        // }, 2000);
 
-        setTimeout(() => {
-          this.messageCreator();
-        }, 3500);
+        // setTimeout(() => {
+        //   this.messageCreator();
+        // }, 3500);
       }
 
     }else{
@@ -124,20 +123,20 @@ export class ChatPage {
         this.messageChecked();
       }, 1000);
 
-      setTimeout(() => {
-        this.contact.status="escribiendo..";
-      }, 2000);
+      // setTimeout(() => {
+      //   this.contact.status="escribiendo..";
+      // }, 2000);
 
-      setTimeout(() => {
-        this.messageCreator();
-      }, 3500);
+      // setTimeout(() => {
+      //   this.messageCreator();
+      // }, 3500);
     }
   }
 
 
   messageChecked(){
     this.messages[this.messages.length-1].check="tick";
-    this.contact.status="online";
+    //this.contact.status="Pedido Finalizado";
   }
 
 
@@ -169,54 +168,40 @@ export class ChatPage {
   //////////// UTILITIS ////////////////////
   //////////////////////////////////////////
 
-  callGallery(){
-    let options = {
-        // Android only. Max images to be selected, defaults to 15. If this is set to 1, upon
-        // selection of a single image, the plugin will return it.
-        maximumImagesCount: 1,
-
-        // max width and height to allow the images to be.  Will keep aspect
-        // ratio no matter what.  So if both are 800, the returned image
-        // will be at most 800 pixels wide and 800 pixels tall.  If the width is
-        // 800 and height 0 the image will be 800 pixels wide if the source
-        // is at least that wide.
-        //width: int,
-        //height: int,
-
-        // quality of resized image, defaults to 100
-        quality: 80,
-
-        // output type, defaults to FILE_URIs.
-        // available options are
-        // window.imagePicker.OutputType.FILE_URI (0) or
-        // window.imagePicker.OutputType.BASE64_STRING (1)
-        outputType: 0
-    };
-
-    this.imagePicker.getPictures(options).then((results) => {
-      for (var i = 0; i < results.length; i++) {
-          //console.log('Image URI: ' + results[i]);
-          this.imagePrompt(results[i]);
-      }
-    }, (err) => { console.log(err); });
+  approve(){
+   //DEV///////////////
+  // console.log("Esta seguro que desea aprobar esta solicitud?");
+  //   this.contact.status = "Solicitud Finalizada";
+  // let message={type:"sent", img:"", text:"*******Aprobado*********", time:this.now(), check:"tick tick-animation"};
+  // this.messages.push(message);
+  ///////////////////////////////////////////////
+  
+   let confirmPromise = this.dialogs.confirm("Esta seguro que desea aprobar esta solicitud?", "Confirmar Aprobación", ["Ok", "No"]);
+            confirmPromise.then(function(data) {
+                  if(data == 1){
+                     this.contact.status = "Solicitud Finalizada";
+                     let message={type:"sent", img:"", text:"-------- Aprobado --------", time:this.now(), check:"tick tick-animation"};
+                     this.messages.push(message);
+                  }
+                }); 
   }
 
-  callCamera(){
-    const options: CameraOptions = {
-      quality: 80,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-
-    this.camera.getPicture(options).then((imageData) => {
-     //let base64Image = 'data:image/jpeg;base64,' + imageData;
-     //console.log(imageData);
-     this.imagePrompt(imageData);
-    }, (err) => {
-     // Handle error
-     console.log(err);
-    });
+  reject(){
+    //DEV///////////////
+  // console.log("Esta seguro que desea rechazar esta solicitud?");
+  //   this.contact.status = "Solicitud Finalizada";
+  // let message={type:"sent", img:"", text:"-------- Rechazado*********", time:this.now(), check:"tick tick-animation"};
+  // this.messages.push(message);
+  ///////////////////////////////////////////////
+  
+   let confirmPromise = this.dialogs.confirm("Esta seguro que desea rechazar esta solicitud?", "Confirmar Rechazo", ["Ok", "No"]);
+            confirmPromise.then(function(data) {
+                  if(data == 1){
+                     this.contact.status = "Solicitud Finalizada";
+                     let message={type:"sent", img:"", text:"-------- Rechazado ---------", time:this.now(), check:"tick tick-animation"};
+                     this.messages.push(message);
+                  }
+                }); 
   }
 
   now(){

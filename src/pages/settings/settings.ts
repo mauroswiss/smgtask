@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController, LoadingController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 import { TermsOfServicePage } from '../terms-of-service/terms-of-service';
 import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy';
@@ -21,8 +22,8 @@ import { LangServices } from '../../providers/language-service';
 })
 export class SettingsPage {
 
-  // make WalkthroughPage the root (or first) page
-  //rootPage: any = WalkthroughPage;
+  // make LoginPage the root (or first) page
+  rootPage: any = LoginPage;
   loading: any;
   currentUser: CurrentUserModel = new CurrentUserModel();
 
@@ -55,7 +56,7 @@ export class SettingsPage {
 
   logout() {
     this.globalSrv.logout();    
-    //this.nav.setRoot(this.rootPage);
+    this.nav.setRoot(this.rootPage);
   }
 
   showTermsModal() {

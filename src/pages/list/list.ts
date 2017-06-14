@@ -37,7 +37,7 @@ import {ChatPage} from '../chat/chat';
       </div>
     </div>
     <ion-tabs class="tabs-basic" (ionChange)="tabSelected($event)">
-      <ion-tab tabTitle="PEDIDOS" [root]="ContactsPage" ></ion-tab>
+      <ion-tab tabTitle="SOLICITUDES" [root]="ContactsPage" ></ion-tab>
       <ion-tab tabTitle="PENDIENTES" [root]="favoritesTab"></ion-tab>
     </ion-tabs>
   </ion-content>`
@@ -70,8 +70,8 @@ export class ListPage {
     this.favorites = [];
     this.loading = this.loadingCtrl.create();
 
-    this.events.subscribe('itemCall:selected', (id,img,name) => {
-      this.goTochat(id,img,name);
+    this.events.subscribe('itemCall:selected', (id,img,name, text) => {
+      this.goTochat(id,img,name,text);
     });
 
     this.events.subscribe('itemCall:toFavorites', (obj) => {
@@ -113,8 +113,8 @@ export class ListPage {
     //     })
   }
 
-  goTochat(id,img,name){
-    this.nav.push(ChatPage,{param:{'id':id, 'img':img, 'name':name}});
+  goTochat(id,img,name,text){
+    this.nav.push(ChatPage,{param:{'id':id, 'img':img, 'name':name, 'text':text}});
   }
 
   callSearchBar(){
