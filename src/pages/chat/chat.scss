@@ -1,0 +1,366 @@
+page-chat {
+  /* Conversation */
+
+    .conversation {
+      height: 100%;
+      position: relative;
+      background: #efe7dd url("../assets/custom/bg_chat.jpg") repeat;
+      z-index: 0;
+    }
+
+    .conversation ::-webkit-scrollbar {
+      transition: all .5s;
+      width: 5px;
+      height: 1px;
+      z-index: 10;
+    }
+
+    .conversation ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .conversation ::-webkit-scrollbar-thumb {
+      background: #b3ada7;
+    }
+
+    .conversation .conversation-container {
+      height: calc(100% - 63px);
+      box-shadow: inset 0 10px 10px -10px #000000;
+      overflow-x: hidden;
+      padding: 0 16px;
+      padding-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .conversation .conversation-container:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Messages */
+
+    .message {
+      color: #000;
+      clear: both;
+      line-height: 18px;
+      font-size: 15px;
+      padding: 8px;
+      position: relative;
+      margin: 8px 0;
+      max-width: 85%;
+      word-wrap: break-word;
+      z-index: -1;
+    }
+
+    .message:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    .messageImg{
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .metadata {
+      display: inline-block;
+      float: right;
+      padding: 0 0 0 7px;
+      position: relative;
+      bottom: -4px;
+    }
+
+    .metadata .time {
+      color: rgba(0, 0, 0, .45);
+      font-size: 11px;
+      display: inline-block;
+    }
+
+    .metadata .tick {
+      display: inline-block;
+      margin-left: 2px;
+      position: relative;
+      top: 4px;
+      height: 16px;
+      width: 16px;
+    }
+
+    .metadata .tick img {
+      position: absolute;
+      transition: .5s ease-in-out;
+    }
+
+    .metadata .tick img:first-child {
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transform: perspective(800px) rotateY(180deg);
+              transform: perspective(800px) rotateY(180deg);
+    }
+
+    .metadata .tick img:last-child {
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transform: perspective(800px) rotateY(0deg);
+              transform: perspective(800px) rotateY(0deg);
+    }
+
+    .metadata .tick-animation img:first-child {
+      -webkit-transform: perspective(800px) rotateY(0);
+              transform: perspective(800px) rotateY(0);
+    }
+
+    .metadata .tick-animation img:last-child {
+      -webkit-transform: perspective(800px) rotateY(-179.9deg);
+              transform: perspective(800px) rotateY(-179.9deg);
+    }
+
+    .message:first-child {
+      margin: 16px 0 8px;
+    }
+
+    .message.received {
+      background: #fff;
+      border-radius: 0px 5px 5px 5px;
+      float: left;
+    }
+
+    .message.received .metadata {
+      padding: 0 0 0 16px;
+    }
+
+    .message.received:after {
+      border-width: 0px 10px 10px 0;
+      border-color: transparent #fff transparent transparent;
+      top: 0;
+      left: -10px;
+    }
+
+    .message.sent {
+      background: rgb(193, 222, 247);
+      border-radius: 5px 0px 5px 5px;
+      float: right;
+    }
+
+    .message.sent:after {
+      border-width: 0px 0 10px 10px;
+      border-color: transparent transparent transparent rgb(193, 222, 247);
+      top: 0;
+      right: -10px;
+    }
+
+
+
+    /* Compose */
+
+  .conversation-compose {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .conversation-compose div,
+  .conversation-compose input {
+    background: #fff;
+    height: 100%;
+  }
+
+  .conversation-compose .emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 5px 0 0 5px;
+    flex: 0 0 auto;
+    margin-left: 8px;
+    width: 48px;
+  }
+
+  .conversation-compose .input-msg {
+    border: 0;
+    flex: 1 1 auto;
+    font-size: 16px;
+    margin: 0;
+    outline: none;
+    min-width: 50px;
+  }
+
+  .conversation-compose .photo {
+    flex: 0 0 auto;
+    border-radius: 0 0 5px 0;
+    text-align: center;
+    position: relative;
+    width: 48px;
+  }
+
+  .conversation-compose .photo:after {
+    border-width: 0px 0 10px 10px;
+    border-color: transparent transparent transparent #fff;
+    border-style: solid;
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: "";
+    top: 0;
+    right: -10px;
+  }
+
+  .conversation-compose .photo i {
+    display: block;
+    color: #7d8488;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+  }
+
+  .conversation-compose .send {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0;
+    position: relative;
+    outline: none;
+  }
+
+  .conversation-compose .send .circle {
+    background: $theme-color-1;
+    border-radius: 50%;
+    color: #fff;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conversation-compose .send .circle i {
+    font-size: 24px;
+    margin-left: 5px;
+  }
+
+  .camera{
+    color: #7d8488;
+    font-size: 2em;
+    margin-top: 12px;
+    margin-right: 12px;
+  }
+
+  .emoti{
+    color: #7d8488;
+    font-size: 2em;
+
+  }
+
+
+  .user-bar .avatar {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    float: left;
+  }
+
+  .user-bar .avatar img {
+    border-radius: 50%;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    display: block;
+    width: 100%;
+  }
+
+  .user-bar .name {
+    font-size: 0.85em;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;
+    margin: 0 0 0 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 180px;
+    padding-top: 3px;
+  }
+
+  .user-bar .status {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .toolbar-title-md {
+    padding: 0px;
+  }
+
+  .progress-bar {
+    position: absolute;
+    top: 1px;
+    background-color: rgba(255,255,255,0.7);
+    height: 20px;
+    padding: 3px;
+    width: 100%;
+  }
+
+  .progress-bar span {
+    display: inline-block;
+    height: 100%;
+	  background-color: #777;
+    -moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+		-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+		-webkit-transition: width .4s ease-in-out;
+		-moz-transition: width .4s ease-in-out;
+		-ms-transition: width .4s ease-in-out;
+		-o-transition: width .4s ease-in-out;
+		transition: width .4s ease-in-out;
+  }
+
+  .blue span {
+      background-color: #34c2e3;
+  }
+
+  .stripes span {
+      -webkit-background-size: 30px 30px;
+      -moz-background-size: 30px 30px;
+      background-size: 30px 30px;
+      background-image: -webkit-linear-gradient(top left, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+      background-image: -o-linear-gradient(top left, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+      background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);;
+
+      -webkit-animation: animate-stripes 3s linear infinite;
+      -moz-animation: animate-stripes 3s linear infinite;
+    }
+
+    @-webkit-keyframes animate-stripes {
+			0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+    }
+
+    @-moz-keyframes animate-stripes {
+			0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+    }
+
+    .alert-md .alert-button-group{
+      padding-bottom: 20px!important;
+      height: 55px!important;
+      display: -webkit-box!important;
+    }
+
+    .alert-md .alert-input-group {
+      padding-bottom: 0px!important;
+  }
+}

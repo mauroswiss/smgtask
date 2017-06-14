@@ -1,0 +1,6 @@
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="{{langSrv.translate.tabs.tab1}}" tabIcon="checkmark-circle-outline" [rootParams]="{eventId: eventId, forumId: forumId, locationEvent: eventLocation, addressEvent: eventAddress, cityEvent: eventCity}"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="{{langSrv.translate.tabs.tab2}}" tabIcon="people" [rootParams]="{eventId: eventId, forumId: forumId}"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="{{langSrv.translate.tabs.tab3}}" tabIcon="text" [rootParams]="{eventId: eventId, forumId: forumId}"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="{{langSrv.translate.tabs.tab4}}" tabIcon="qr-scanner"></ion-tab>
+</ion-tabs> 

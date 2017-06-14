@@ -1,0 +1,264 @@
+{
+  ES: {
+   inro: {
+      login: "Entrar",
+      signup: "Registrarse",
+      welcome: "Bienvenido!",
+      message1: "Ingrese a su cuenta.",
+      message2: "¡Estamos listos!"
+    },
+    login: {
+      email: "",
+      password: "",
+      forgot: ""
+    },
+    signup: {
+      email: "",
+      password: "",
+      name: "",
+      age: "",
+      terms:""    
+    },
+    tabs: {
+      home: "",
+      surveys: "",
+      me: "",
+      search: "",
+      private: ""
+    },
+    barrcode: {
+      update: "",
+      survey: "",
+      notupdate: "",
+      price: "",
+      remove: "",
+      pending: "",
+      pending_title: ""    
+    },
+    checkin: {
+      title: "",
+      viewed: "",
+      noviewed: "",
+      paused: "",
+      cancelled: "",
+      inprogress: "",
+      price: "",
+      like: "",
+      likes: ""    
+    }, 
+    events: {
+      title: "",
+      money: "",
+      surveys_finished: "",
+      history: "",    
+      viewed: "",
+      noviewed: "",
+      paused: "",
+      cancelled: "",
+      inprogress: "",
+      finished: "",
+      price: "",
+      like: "",
+      likes: ""    
+    },
+    forgotpass: {
+      title: "",
+      select_value: "",
+      button_finish: "",
+      button_next: "",
+      placeholder: ""   
+    },  
+    forummembers: {
+      title: "",
+      question: "",
+      answer: ""
+    },  
+    profile: {
+      language_label: "",
+      lang_es: "",
+      lang_us: ""
+    },
+    notifications: {
+      title: "",
+      subtitle: "",
+      price: ""
+    },
+    schedule: {
+      button_cancel: "",
+      viewed: "",
+      noviewed: "",
+      paused: "",
+      cancelled: "",
+      inprogress: "",
+      price: "",
+      like: "",
+      likes: "",
+      placeholder: ""      
+        
+    }, 
+    menu: {
+      search: "",
+      logoff: "",
+      search_msg: "",
+      logoff_msg: "",    
+      home_msg: "",
+      me_msg: "",
+      private_msg: "" 
+    },     
+    settings:{
+      placeholder: "",
+      title: "",
+      button_send: "",
+      button_scan: "",
+      pop_title: "",
+      pop_msg: ""    
+    },
+    sponsors:{
+      placeholder: "",
+      title: "",
+      button_send: "",
+      button_scan: "",
+      pop_title: "": ,
+      pop_msg: ""    
+    },
+    g_button_join:"",
+    g_button_signin: "",
+    g_button_answer: "",
+    g_button_share: "",
+    g_button_send: "",
+    g_internet_error: "",
+    g_login_error: "",
+    g_generic_error: ""
+  },
+  ES: {
+   inro: {
+      login: "Entrar",
+      signup: "Registrarse",
+      welcome: "Bienvenido!",
+      message1: "Ingrese a su cuenta.",
+      message2: "¡Estamos listos!"
+    },
+    login: {
+      email: "",
+      password: "",
+      forgot: ""
+    },
+    signup: {
+      email: "",
+      password: "",
+      name: "",
+      age: "",
+      terms:""    
+    },
+    tabs: {
+      home: "",
+      surveys: "",
+      me: "",
+      search: "",
+      private: ""
+    },
+    barrcode: {
+      update: "",
+      survey: "",
+      notupdate: "",
+      price: "",
+      remove: "",
+      pending: "",
+      pending_title: ""    
+    },
+    checkin: {
+      title: "",
+      viewed: "",
+      noviewed: "",
+      paused: "",
+      cancelled: "",
+      inprogress: "",
+      price: "",
+      like: "",
+      likes: ""    
+    }, 
+    events: {
+      title: "",
+      money: "",
+      surveys_finished: "",
+      history: "",    
+      viewed: "",
+      noviewed: "",
+      paused: "",
+      cancelled: "",
+      inprogress: "",
+      finished: "",
+      price: "",
+      like: "",
+      likes: ""    
+    },
+    forgotpass: {
+      title: "",
+      select_value: "",
+      button_finish: "",
+      button_next: "",
+      placeholder: ""   
+    },  
+    forummembers: {
+      title: "",
+      question: "",
+      answer: ""
+    },  
+    profile: {
+      language_label: "",
+      lang_es: "",
+      lang_us: ""
+    },
+    notifications: {
+      title: "",
+      subtitle: "",
+      price: ""
+    },
+    schedule: {
+      button_cancel: "",
+      viewed: "",
+      noviewed: "",
+      paused: "",
+      cancelled: "",
+      inprogress: "",
+      price: "",
+      like: "",
+      likes: "",
+      placeholder: ""      
+        
+    }, 
+    menu: {
+      search: "",
+      logoff: "",
+      search_msg: "",
+      logoff_msg: "",    
+      home_msg: "",
+      me_msg: "",
+      private_msg: "" 
+    },     
+    settings:{
+      placeholder: "",
+      title: "",
+      button_send: "",
+      button_scan: "",
+      pop_title: "",
+      pop_msg: ""    
+    },
+    sponsors:{
+      placeholder: "",
+      title: "",
+      button_send: "",
+      button_scan: "",
+      pop_title: "": ,
+      pop_msg: ""    
+    },
+    g_button_join:"",
+    g_button_signin: "",
+    g_button_answer: "",
+    g_button_share: "",
+    g_button_send: "",
+    g_internet_error: "",
+    g_login_error: "",
+    g_generic_error: ""
+  }
+}

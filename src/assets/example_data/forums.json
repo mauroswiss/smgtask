@@ -1,0 +1,24 @@
+[
+  {
+    "id": 10,
+    "client_id": 3,
+    "name": "Simposio Avances en Urología 2017",
+    "description": "Primer foro de la Sociedad Argentina de Urología del 2017. Novedades y avances en urología con importantes inviyados nacionales e internacionales",
+    "start_date": "2017-04-20T08:00:00.000-03:00",
+    "survey_url": "",
+    "location": "Hilton Buenos Aires Hotel",
+    "address": "Av. Macacha Güemes 351",
+    "city": "Buenos Aires",
+    "country": "AR",
+    "cost": 0,
+    "latitude": -34.6048,
+    "longitude": -58.3638,
+    "open": true,
+    "active": true,
+    "created_at": "2017-03-22T08:41:25.000-03:00",
+    "updated_at": "2017-03-22T08:41:25.000-03:00",
+    "private": false,
+    "when": "2017-04-20 08:00 AM",
+    "url": "http://smgtask.com/en/forums/10.json"
+  }
+]

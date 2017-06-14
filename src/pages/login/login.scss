@@ -1,0 +1,99 @@
+login-page {
+	.login-content	{
+
+		.scroll-content {
+		    padding: 16px 2%!important;
+		}
+
+		.auth-action-button{
+			background-color:$theme-color-1!important;
+			font-size: 1.4rem!important;
+			text-transform: capitalize!important;
+		}
+
+		.logo{
+			text-align:center;
+			padding: 20%;
+		}
+
+		p{
+			text-align:center;
+			color:#8e8e93;
+			font-size:1.4rem;
+			margin-top: 0;
+			margin-bottom: 0.3em;
+		}
+
+		.forgot-button{
+			margin: 0!important;
+			padding: 0!important;
+			margin-bottom: 18px !important;
+			float:right;
+			color: $white-d;
+			font-size:1.4rem;
+			text-transform: capitalize;
+
+			.button-inner{
+				@include justify-content(flex-start);
+			}
+		}
+
+		.center{
+			text-align:center!important;
+			padding: 0;
+			margin:4px 0px!important;
+		}
+
+		.footer{
+			font-size:1.1rem;
+		}
+
+		.facebook-auth-button{
+			border-radius: 0px;
+			// padding:10px!important;
+			float:right!important;
+			background-color:transparent;
+			color:#3b5998;
+			font-size: 3.6rem!important;
+		}
+
+		.google-auth-button{
+			border-radius: 0px;
+			margin: 0 auto!important;
+			color: #cc181e;
+			padding-top: 5px;
+			background-color:transparent;
+    		font-size: 3.6rem!important;
+		}
+
+		.twitter-auth-button{
+			border-radius: 0px;
+	    float: left !important;
+	    color: #0084b4;
+	    padding-top: 3px;
+	    margin: 0;
+	    background-color: transparent;
+	    font-size: 3.2rem !important;
+		}
+
+		.alt-options{
+
+			.button{
+				margin: 0px;
+				padding: 0px;
+				font-size: 1.4rem;
+			}
+
+
+
+			.signup-button{
+				font-weight: 500;
+				color: #000;
+
+				.button-inner{
+					@include justify-content(flex-end);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+<ion-menu [content]="content" [swipeEnabled]="false">
+  <ion-content class="menu-content">
+    <ion-list class="menu-list">
+      <div class="header-menu">
+        <ion-row center style="padding: 5% 0% 5% 20%;">
+        <ion-col center width-75>
+          <preload-image class="menu-logo" [ratio]="{w:1, h:1}" src="{{currentUser.image}}"></preload-image>
+          <h5>{{currentUser.name}}</h5>
+        </ion-col>
+      </ion-row>
+      </div>
+      <button ion-item detail-none (click)="pushPage(components.contact)">
+        <ion-icon  name="ios-contact" item-left></ion-icon>
+        {{langSrv.translate.menu.profile}}
+      </button>
+      <!-- <button ion-item detail-none (click)="openPage(components.forums)">
+        <ion-icon name="md-git-compare" item-left></ion-icon>
+        {{langSrv.translate.menu.forums}}
+      </button>
+      <button ion-item detail-none (click)="openPage(components.members)">
+        <ion-icon  name="people" item-left></ion-icon>
+        {{langSrv.translate.menu.members}}
+      </button>
+      <button ion-item detail-none (click)="openPage(components.sponsors)">
+        <ion-icon  name="megaphone" item-left></ion-icon>
+        {{langSrv.translate.menu.sponsors}}
+      </button>
+      <button ion-item detail-none (click)="openSurvey()">
+        <ion-icon name="list-box" item-left></ion-icon>
+        {{langSrv.translate.menu.survey}}
+      </button> -->
+      <button ion-item detail-none (click)="pushPage(components.settings)">
+        <ion-icon name="settings" item-left></ion-icon>
+        {{langSrv.translate.menu.settings}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

@@ -1,0 +1,70 @@
+<!-- <ion-header class="login-header auth-header">
+  <ion-navbar>
+    <ion-title>Sign in</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content class="login-content auth-content">
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-12>
+        <div class="logo">
+          <img src="assets/images/swiss.jpg">
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12 col-sm-12 col-md-3></ion-col>
+
+      <ion-col col-12 col-sm-12 col-md-6>
+
+        <p>Por favor ingresa tus datos</p>
+        <form class="login-form auth-form" [formGroup]="login" (ngSubmit)="doLogin()">
+          <ion-item>
+            <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+          </ion-item>
+          <show-hide-container>
+            <ion-item>
+              <ion-input type="password" placeholder="Password" formControlName="password" show-hide-input></ion-input>
+            </ion-item>
+          </show-hide-container>
+          <p class="auth-divider"></p>
+          <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!login.valid">Ingresar</button>
+          <p class="auth-divider"></p>
+        </form>
+
+        <!--<ion-row class="alt-options">-->
+        <!--  <ion-col col-12 class="center">-->
+        <!--    <button class="forgot-button center" ion-button clear  (click)="goToForgotPassword()">¿Olvido su contraseña?</button>-->
+        <!--  </ion-col>-->
+        <!--</ion-row>-->
+        <!--<ion-row class="alt-options">-->
+        <!--  <ion-col col-12 class="center">-->
+        <!--    ¿No tienes una cuenta aún?-->
+        <!--      <button class="signup-button" (click)="goToSignup()">Crear cuenta</button>-->
+        <!--      <p class="auth-divider center">O ingresá con una red social</p>-->
+        <!--  </ion-col>-->
+        <!--  <ion-col col-4>-->
+        <!--      <ion-icon class="facebook-auth-button" name="logo-facebook"  (click)="doFacebookLogin()"></ion-icon>-->
+        <!--  </ion-col>-->
+        <!--  <ion-col col-4 class="center">-->
+        <!--      <ion-icon class="google-auth-button" name="logo-googleplus"  (click)="doGoogleLogin()"></ion-icon>-->
+        <!--  </ion-col>-->
+        <!--  <ion-col col-4>-->
+        <!--      <ion-icon class="twitter-auth-button" name="logo-twitter" (click)="doTwiterLogin()"></ion-icon>-->
+        <!--  </ion-col>-->
+
+        <!--</ion-row>-->
+      </ion-col>
+
+      <ion-col col-3 col-sm-12 col-md-3></ion-col>
+      <ion-col col-12 col-sm-12 col-md-12>
+        <p class="center"> <b>Powered by </b> </p>
+        <p class="center footer"> 2017 © SMG </p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

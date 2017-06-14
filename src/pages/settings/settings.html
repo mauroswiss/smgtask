@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{langSrv.translate.settings.title}}</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="settings-content">
+  <div class="user-image-content">
+    <ion-row no-padding class="user-image-row">
+      <ion-col no-padding width-40>
+        <preload-image class="user-image" [ratio]="{w:1, h:1}" [src]="currentUser.image"></preload-image> 
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+    <ion-list class="user-data-content">
+      <ion-item *ngIf="currentUser.name">
+        <ion-label stacked>{{langSrv.translate.settings.name}}</ion-label>
+        <ion-input type="text" value="{{currentUser.name}}" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="currentUser.company">
+        <ion-label stacked>{{langSrv.translate.settings.company}}</ion-label>
+        <ion-input type="text" value="{{currentUser.company}}" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="currentUser.job_title">
+        <ion-label stacked>{{langSrv.translate.settings.role}}</ion-label>
+        <ion-input type="text" value="{{currentUser.job_title}}" readonly></ion-input>
+      </ion-item>
+       <ion-item *ngIf="currentUser.email">
+        <ion-label stacked>{{langSrv.translate.settings.email}}</ion-label>
+        <ion-input type="text" value="{{currentUser.email}}" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="currentUser.phone">
+        <ion-label stacked>{{langSrv.translate.settings.phone}}</ion-label>
+        <ion-input type="text" value="{{currentUser.phone}}" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="currentUser.bio">
+        <ion-label stacked>{{langSrv.translate.settings.desc}}</ion-label>
+        <ion-textarea alue="{{currentUser.bio}}" readonly rows="5" ></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <ion-list class="switchers-list">
+      <ion-item class="switcher-item">
+        <ion-label>{{langSrv.translate.settings.share}}</ion-label>
+        <ion-toggle [(ngModel)]="currentUser.online" (ionChange)="status()" ></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+<!--
+
+  <button class="alt-button" ion-button full (click)="showPrivacyModal()">Privacy policy</button>
+
+  <button class="alt-button" ion-button full (click)="showTermsModal()">Terms of use</button>
+-->
+
+  <button class="alt-button logout-button" ion-button full icon-left (click)="logout()">
+    <ion-icon name="log-out"></ion-icon>
+    {{langSrv.translate.settings.logout}}
+  </button>
+</ion-content>

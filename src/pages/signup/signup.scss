@@ -1,0 +1,78 @@
+signup-page {
+	.signup-content	{
+
+		h2{
+			text-align: center!important;
+			font-size: 1.4rem!important;
+			font-weight: bold!important;
+			color: #000!important;
+			margin-bottom: 10!important;
+		}
+
+		.scroll-content {
+		    padding: 6px 2%!important;
+		}
+
+		.auth-action-button{
+			background-color:$theme-color-1!important;
+			font-size: 1.4rem!important;
+			text-transform: capitalize!important;
+		}
+
+		.logo{
+			text-align:center;
+			padding-top:0px;
+		}
+
+		p{
+			text-align:center;
+			color:#8e8e93;
+			font-size:1.4rem;
+			margin-top: 0;
+			margin-bottom: 0.3em;
+		}
+
+		.center{
+			text-align:center!important;
+			padding: 0;
+		}
+
+		.footer{
+			font-size:1.1rem;
+		}
+
+		.legal-stuff{
+			color: $white-d;
+			text-align: center;
+			margin: 10px 12px;
+
+			.legal-action{
+				font-weight: 500;
+				color: $theme-color-2;
+			}
+		}
+
+		ion-select{
+			padding: 0!important;
+			max-width: 70%!important;
+		}
+
+		.select-md .select-icon {
+		    margin-right: 5px!important;
+				margin-left: 5px!important;
+		}
+
+		.item.item-md .checkbox-md {
+		    margin: 9px 10px 9px 4px!important;
+		}
+
+		ion-app.ios .auth-content .auth-form .show-hide-password ion-item.item input[type=password].text-input {
+		    letter-spacing: 1px!important;
+		}
+
+		.select-ios .select-icon {
+		    margin-left: 5px;
+		    margin-right: 5px;
+		}
+	}
+}
