@@ -3,9 +3,9 @@ import { NavController, NavParams, AlertController} from 'ionic-angular';
 import { ContactInfoPage} from '../contact-info/contact-info';
 import { Keyboard } from '@ionic-native/keyboard';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { ImagePicker } from '@ionic-native/image-picker';
+// import { ImagePicker } from '@ionic-native/image-picker';
 import { NativeAudio } from '@ionic-native/native-audio';
-import { FileOpener } from '@ionic-native/file-opener';
+// import { FileOpener } from '@ionic-native/file-opener';
 import { Dialogs } from '@ionic-native/dialogs';
 
 /*
@@ -17,7 +17,7 @@ import { Dialogs } from '@ionic-native/dialogs';
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html',
-  providers: [Keyboard,Camera,ImagePicker,NativeAudio, FileOpener]
+  providers: [Keyboard,Camera,NativeAudio ]
 })
 
 export class ChatPage {
@@ -62,11 +62,11 @@ export class ChatPage {
     public navParams: NavParams,
     private keyboard: Keyboard,
     private camera: Camera,
-    private imagePicker: ImagePicker,
+    // private imagePicker: ImagePicker,
     private nativeAudio: NativeAudio,
     public alertCtrl: AlertController,
     private dialogs: Dialogs,
-    private fileOpener: FileOpener
+    // private fileOpener: FileOpener
     ) {
       this.params = navParams.get("param");
       this.contact.id=this.params.id;

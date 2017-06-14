@@ -53,7 +53,6 @@
     "cordova-plugin-inappbrowser",
     "cordova-plugin-dialogs",
     "cordova-sqlite-storage",
-    "cordova-plugin-x-socialsharing",
     "cordova-plugin-geolocation"
   ],
   "cordovaPlatforms": [
