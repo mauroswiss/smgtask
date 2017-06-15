@@ -1,6 +1,6 @@
 {
-  "name": "Lanin",
-  "author": "Beatcoding",
+  "name": "SMGTask",
+  "author": "Mauro Novillo",
   "homepage": "https://smg.com",
   "private": true,
   "scripts": {
@@ -67,7 +67,7 @@
       "locator": "android"
     }
   ],
-  "description": "Lanin mobile app.",
+  "description": "SMGTask mobile app.",
   "config": {
     "ionic_source_map_type": "source-map",
     "ionic_sass": "./config/sass.config.js"

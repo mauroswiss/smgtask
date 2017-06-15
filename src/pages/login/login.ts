@@ -131,7 +131,7 @@ export class LoginPage {
       this.currentUser = new CurrentUserModel();
       this.currentUser.email = "patricia.cuenca@swissmedical.com.ar";
       this.currentUser.name = "Patricia Cuenca";
-      this.currentUser.image = "assets/images/pato.png"
+      this.currentUser.image = "assets/custom/pato.png"
       this.globalSrv.setCurrentUser(this.currentUser);
       this.nav.setRoot(ListPage);
     } else if(this.login.value.email == "edpiano@swissmedical.com.ar" && this.login.value.password == "edusmg17") {
@@ -139,7 +139,7 @@ export class LoginPage {
       this.currentUser = new CurrentUserModel();
       this.currentUser.email = "edpiano@swissmedical.com.ar";
       this.currentUser.name = "Eduardo Del Piano";
-      this.currentUser.image = "assets/images/edu.png"
+      this.currentUser.image = "assets/custom/edu.png"
       this.globalSrv.setCurrentUser(this.currentUser);
       console.log(this.currentUser.name);
       this.nav.setRoot(ListPage);

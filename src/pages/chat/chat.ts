@@ -2,7 +2,7 @@ import { Component, ViewChild,ElementRef } from '@angular/core';
 import { NavController, NavParams, AlertController} from 'ionic-angular';
 import { ContactInfoPage} from '../contact-info/contact-info';
 import { Keyboard } from '@ionic-native/keyboard';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
 // import { ImagePicker } from '@ionic-native/image-picker';
 import { NativeAudio } from '@ionic-native/native-audio';
 // import { FileOpener } from '@ionic-native/file-opener';
@@ -74,9 +74,9 @@ export class ChatPage {
       this.contact.name=this.params.name;
       this.contact.text=this.params.text;
       this.bar_porcen_text=this.bar_porcen+"%";
-     this.messages = [
-      {type:"received", img:"", text:this.contact.text, time:"9:13 PM", check:"tick"}
-  ]
+      this.messages = [
+        {type:"received", img:"", text:this.contact.text, time:"9:13 PM", check:"tick"}
+      ]
   }
 
   ionViewDidLoad() {
@@ -176,13 +176,18 @@ export class ChatPage {
   // this.messages.push(message);
   ///////////////////////////////////////////////
   
-   let confirmPromise = this.dialogs.confirm("Esta seguro que desea aprobar esta solicitud?", "Confirmar Aprobación", ["Ok", "No"]);
+   let env = this;
+   let confirmPromise = env.dialogs.confirm("Esta seguro que desea aprobar esta solicitud?", "Confirmar Aprobación", ["Ok", "No"]);
             confirmPromise.then(function(data) {
-                  if(data == 1){
-                     this.contact.status = "Solicitud Finalizada";
-                     let message={type:"sent", img:"", text:"-------- Aprobado --------", time:this.now(), check:"tick tick-animation"};
-                     this.messages.push(message);
-                  }
+                  let data_: number = data;
+                  if(data_ == 1) {
+                     env.contact.status = "Solicitud Finalizada";
+                     let message_= {type:"sent", img:"", text:"-------- Aprobado --------", time:env.now(), check:"tick tick-animation"};
+                     env.messages.push(message_);
+                     setTimeout(() => {
+                        env.messageChecked();
+                     }, 1000);
+                  }   
                 }); 
   }
 
@@ -193,13 +198,17 @@ export class ChatPage {
   // let message={type:"sent", img:"", text:"-------- Rechazado*********", time:this.now(), check:"tick tick-animation"};
   // this.messages.push(message);
   ///////////////////////////////////////////////
-  
-   let confirmPromise = this.dialogs.confirm("Esta seguro que desea rechazar esta solicitud?", "Confirmar Rechazo", ["Ok", "No"]);
+   let env = this;
+   let confirmPromise = env.dialogs.confirm("Esta seguro que desea rechazar esta solicitud?", "Confirmar Rechazo", ["Ok", "No"]);
             confirmPromise.then(function(data) {
-                  if(data == 1){
-                     this.contact.status = "Solicitud Finalizada";
-                     let message={type:"sent", img:"", text:"-------- Rechazado ---------", time:this.now(), check:"tick tick-animation"};
-                     this.messages.push(message);
+                  let data_: number = data;
+                  if(data_ == 1) {
+                     env.contact.status = "Solicitud Finalizada";
+                     let message={type:"sent", img:"", text:"-------- Rechazado ---------", time:env.now(), check:"tick tick-animation"};
+                     env.messages.push(message);
+                     setTimeout(() => {
+                        env.messageChecked();
+                     }, 1000);
                   }
                 }); 
   }

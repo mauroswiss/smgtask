@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>
       <div class="user-bar">
-        <div class="avatar" (click)="goToContact()">
+        <div class="avatar">
           <img src="{{contact.img}}">
         </div>
         <div class="name">
@@ -21,9 +21,9 @@
 
 <ion-content>
   <div class="conversation">
-    <div class="progress-bar blue stripes">
-      <span [style.width]="this.bar_porcen_text" *ngIf="showTimer"></span>
-    </div>
+    <!--<div class="progress-bar blue stripes">-->
+    <!--  <span [style.width]="this.bar_porcen_text" *ngIf="showTimer"></span>-->
+    <!--</div>-->
     <div #cnt class="conversation-container">
       <div *ngFor="let message of messages" class="message {{message.type}}">
         <div *ngIf="message.img!=''" class="messageImg">

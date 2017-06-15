@@ -1,6 +1,6 @@
 {
-  "name": "Lanin",
-  "short_name": "Lanin",
+  "name": "SMGTask",
+  "short_name": "SMGTask",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

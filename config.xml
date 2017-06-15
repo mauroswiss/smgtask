@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.smg.smgtask" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Lanin</name>
-  <description>Lanin mobile app.</description>
-  <author email="contacto@smg.com" href="http://www.smg.com/">Beatcoding LLC</author>
+  <name>SMGTask</name>
+  <description>SMGTask mobile app.</description>
+  <author email="contacto@smg.com" href="http://www.smg.com/">SMG</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
